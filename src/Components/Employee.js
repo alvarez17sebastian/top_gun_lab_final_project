@@ -10,6 +10,7 @@ export class Employee  extends Component{
         
     }
     render(){
+        //jonda
         const{photo,name,totalPoints}=this.props
         return (
                 
