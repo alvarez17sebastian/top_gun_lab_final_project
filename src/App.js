@@ -3,7 +3,9 @@ import './App.css';
 import 'bulma/css/bulma.css'
 import {Employee} from './Components/Employee'
 
-function App() {
+
+class App extends Component{
+  render(){
   return (
     <div className="App">
       <Employee className="card"
@@ -13,7 +15,8 @@ function App() {
       ></Employee>
 
     </div>
-  );
+   )
+  }
 }   
 
 export default App;
