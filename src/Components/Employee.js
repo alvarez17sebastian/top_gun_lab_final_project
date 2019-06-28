@@ -1,20 +1,22 @@
-import React,{Component} from 'react';
+import React from 'react';
 
 
+function Employee({
+    name,
+    imgSrc,
+    points
+    
+}) {
+    return (
+      <div className={"container"}>
+       <div className={"card"}>
+         <img src={imgSrc} className={"img"} />
+         <h1 >Trabajador: {name} </h1> 
+         <p>puntos Totales: {points}</p>
+       </div>
+     </div>
+    );
+} 
 
-export class Employee  extends Component{
-    render(){
-         const{photo,name,totalPoints}=this.props
-        return (
-        <div className={"container"}>
-            <div className={"card"}>
-              <img src={photo} className={"img"} />
-              <h1 >Trabajador: {name} </h1> 
-              <p>puntos Totales: {totalPoints}</p>
 
-            </div>
-        </div>
-       )
-    }
-}
-
+export default Employee;
