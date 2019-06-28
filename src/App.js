@@ -3,6 +3,7 @@ import './App.css';
 import 'bulma/css/bulma.css'
 import Employee from './Components/Employee'
 import { employees } from "./Datajson/Data";
+import EmployeesList from './containers/EmployeesList'
 
 
 class App extends Component{
@@ -134,19 +135,11 @@ class App extends Component{
           <button type="submit">Create!</button>
           
      </form>
-          
-         
-       
-         
-       
-      
-        
-       
-        
-       
+
     </div>
    
    )
+
   }
 }  
 
