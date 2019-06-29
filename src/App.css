@@ -3,10 +3,10 @@
 }
 
 .container{
-  width: 280px;
-  height: 430px;
+  width: 180px;
+  height: 130px;
   display: inline-block;
-  max-width: 10000px;
+  max-width: 10px;
   max-height: 350px;
   cursor: pointer;
   text-shadow: 2px 2px 3px rgba(100,100,100,0.8);
