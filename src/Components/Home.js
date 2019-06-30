@@ -1,28 +1,26 @@
-import React from 'react';
+import React,{Component} from 'react';
 import EmployeesList from '../containers/EmployeesList';
-import styled from 'styled-components';
+import {StyledAppContainer,StyledHeader} from '../Styles/HomeStyle';
 
-
-
-function Home() {
-  return (
+class Home extends Component{ 
+    
+  render (){
+    return (
       <StyledAppContainer>
         <StyledHeader>
           <h1>Employees List</h1>
         </StyledHeader>
         <EmployeesList />
-      </StyledAppContainer>
-  );
+       
+        </StyledAppContainer>    
+  )}
 }
-const StyledAppContainer = styled.div`
-text-align: center;
-`;
-
-export const StyledHeader = styled.header`
-background-color: #222;
-color: #fff;
-overflow: auto;
-`;
+  export default Home;
 
 
-export default Home;
+     
+  
+
+
+
+

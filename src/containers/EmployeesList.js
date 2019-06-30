@@ -13,14 +13,6 @@ class EmployeesList extends Component{
                 content:[],
                 error:false
             },
-            newEmployeeFrom:{
-             name:"",
-             points:"",
-             job:"",
-             area:"",
-             imgSrc:""
-           },
-           createEmployeeError: false,
            filterText:""
         }
     }
@@ -51,82 +43,56 @@ class EmployeesList extends Component{
     }
 
     
-    createEmployee = (e) => {
-        e.preventDefault();
-        const {
-            newEmployeeFrom: {
-                name,
-                points,
-                job,
-                area,
-                imgSrc
-            }
-        } = this.state;
-        
-        axios.post(`${BASE_REMOTE_ENDPOINT}/employees`, {
-            name,
-            points,
-            job,
-            area,
-            imgSrc
-        }, {
-            headers: { "Content-Type": "application/json"}
-        })
-        .then(() => { this.getEmployees() })
-        .catch(() => { this.setState({ createEmployeeError: true })})
-    }
-    createTextInput = (value, field) => (
-        <input
-            required
-            type="text"
-            placeholder={field}
-            onChange={(e) => this.handleInputChange(e.target.value, field)}
-            value={value}
-        />
-    )
 
-    handleInputChange = (value, field) => {
-        this.setState(prevState => ({
-            newEmployeeFrom: {
-                ...prevState.newEmployeeFrom,
-                [field]: value
+    handleTextChange = (e, keyText) => {
+            const value = e.target.value;
+            this.setState({ [keyText]: value })
+          }
+      
+       orderArray=(e)=>{
+        const newArray= e.sort(function (a, b) {
+            if (a.points < b.points) {
+              return 1;
             }
-        }))
-    }
+            if (a.points > b.points) {
+              return -1;
+            }
+            return 0;
+          });
+          return newArray;
+       }   
+
+       
 
     render(){
         const{
             Employees:{content,error},
-            createEmployeeError,
-            newEmployeeFrom: {
-                name,
-                points,
-                job,
-                area,
-                imgSrc
-        }
-       }   = this.state;
+    
+        filterText
+    }   = this.state;
+
             if (error) {
               return <div>Fetch Error: {error}</div>
             }
+            
+            const filteredName = this.orderArray(content).filter(newContent => newContent.name.includes(filterText));
+
         return(
-            <>
-            <h2>Create employee</h2>
+             <>
+            <input
+            onChange={(e) => this.handleTextChange(e, "filterText")}
+            placeholder="Filter by name"
+            type="text"
+            value={filterText} />
 
-            {createEmployeeError && <p>An error ocurred creating Employee</p>}
-            <form onSubmit={e => this.createEmployee(e)}>
-                {this.createTextInput(name, 'name')}
-                {this.createTextInput(points, 'points')}
-                {this.createTextInput(job, 'job')}
-                {this.createTextInput(area, 'area')}
-                {this.createTextInput(imgSrc, 'imgSrc')}
-                <button type="submit">Create</button>
-            </form>
-
-                {content.map(({ id, name, imgSrc, points }) => (
-                <Link key={id} to={`/employees/${id}`}>
-                    <Employee imgSrc={imgSrc} name={name} points={points}/>
+                {filteredName.map(({ id, name, imgSrc, points }) => (
+                    
+                 <Link key={id} to={`/employees/${id}`}>
+                    <Employee
+                     imgSrc={imgSrc} name={name} points={points}
+                    />
                 </Link>
+               
             ))}
          </>
         );
