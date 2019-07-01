@@ -3,7 +3,7 @@ import {StyledEmployeeFigure,StyledEmployeeImg,StyledEmployeeCaption,StylePoints
 
 const Employee = ({ imgSrc, name,points}) => {
   return (
-    
+   
       <StyledEmployeeFigure>
           <StyledEmployeeImg src={imgSrc} alt=""/>
           <StyledEmployeeCaption>Name: {name}</StyledEmployeeCaption> 

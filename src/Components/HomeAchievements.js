@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import AchievementsList from '../containers/AchievementsList';
-
+import AppRouter from '../Router';
 
 class HomeAchievements extends Component{ 
     
   render (){
     return (
       <div>
-         <p>Achievement List</p>
+         <AppRouter/>
          <AchievementsList/>
       </div>    
   )}

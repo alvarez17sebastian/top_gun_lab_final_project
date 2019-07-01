@@ -3,7 +3,7 @@ import PrizeCard from "../Components/PrizeCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { BASE_REMOTE_ENDPOINT, PRIZES_RESOURCE } from "../BaseUrls";
-
+import AppRouter from '../Router';
 class PrizesList extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +28,8 @@ class PrizesList extends Component {
     const { prizesList } = this.state;
     console.log(prizesList);
     return (
+      <>
+      <AppRouter/>
       <div className="card-container">
         {prizesList.map(({ id, name, imgSrc, points }) => (
            <Link key={id} to={`/prizes/${id}`}>
@@ -35,6 +37,7 @@ class PrizesList extends Component {
           </Link>
         ))}
       </div>
+      </>
     );
   }
 }

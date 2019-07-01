@@ -4,12 +4,13 @@ import HomeAchievements from './Components/HomeAchievements';
 import NotFound from './Components/NotFound'
 import EmployeesDetails from './containers/EmployeesDetails';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import PrizesList from './containers/PrizesList'
-import PrizeDetail from './containers/PrizeDetail'
+import PrizesList from './containers/PrizesList';
+import PrizeDetail from './containers/PrizeDetail';
 import "./App.css";
 import "bulma/css/bulma.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./App.css";
+
 
 function App() {
   return (
@@ -29,9 +30,16 @@ function App() {
         <Route exact path="/prizes/:id" component={PrizeDetail} />
         <Route component={NotFound} />
       </Switch>
+     
     </HashRouter>
   );
 }
+
+
+
+
+
+
 
 export default App;
 

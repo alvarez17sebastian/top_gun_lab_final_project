@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {BASE_REMOTE_ENDPOINT} from '../BaseUrls'
-
+import AppRouter from '../Router';
 class EmployeesDetails extends Component {
     constructor(props) {
         super(props);
@@ -50,7 +50,9 @@ class EmployeesDetails extends Component {
         } = this.state;
 
         return ( 
+
                 <div>
+                <AppRouter/>
                 <img src={imgSrc} alt=""/>
                 <p><b></b>{name}</p>
                 <p><b></b>{points}</p>
