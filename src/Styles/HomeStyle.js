@@ -6,7 +6,9 @@ text-align: center;
  `;
 
 export const StyledHeader = styled.header`
- background-color: #222;
+ background-color: #63717f;
  color: #fff;
  overflow: auto;
+ 
+ 
 `;

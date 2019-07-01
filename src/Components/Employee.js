@@ -8,6 +8,7 @@ const Employee = ({ imgSrc, name,points}) => {
           <StyledEmployeeImg src={imgSrc} alt=""/>
           <StyledEmployeeCaption>Name: {name}</StyledEmployeeCaption> 
           <StylePoints>Total points: {points}</StylePoints>  
+        
       </StyledEmployeeFigure>
    
   );

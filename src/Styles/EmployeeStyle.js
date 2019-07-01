@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const StyledEmployeeFigure = styled.figure`
 
-width: 280px;
-border-radius: 8px;
+width: 300px;
+border-radius: 9px;
 height: 300px;
-margin-top: 5;
-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
+box-shadow:  0 1px 5px rgba(0, 0, 0, 100);
 display: inline-block;
 margin:15px;
 text-align: center;

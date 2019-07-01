@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import {BASE_REMOTE_ENDPOINT} from '../BaseUrls'
+import {StyledEmployeeForm,StyledEmployeeInput,StyledFormContainer} from '../Styles/EmployeesFormStyle';
 
 
 class EmployeesForm extends Component{
@@ -46,7 +47,7 @@ class EmployeesForm extends Component{
         .catch(() => { this.setState({ createEmployeeError: true })})
     }
     createTextInput = (value, field) => (
-        <input
+        <StyledEmployeeInput
             required
             type="text"
             placeholder={field}
@@ -80,22 +81,26 @@ class EmployeesForm extends Component{
 
          
         return(
-            <div>
            
-             <h2>createEmployee</h2>
+            <StyledFormContainer>
+             <h2  >Create Employee</h2>
              {createEmployeeError && <p>An error ocurred creating Employee</p>}
-             <form onSubmit={e => this.createEmployee(e)}>
-                 <label> {this.createTextInput(name, 'name')} </label>
-                <label>{this.createTextInput(points, 'points')}</label>
-                <label>{this.createTextInput(job, 'job')}</label>
-                <label>{this.createTextInput(area, 'area')}</label>
-                 <label>{this.createTextInput(imgSrc, 'imgSrc')}</label>
+             <StyledEmployeeForm onSubmit={e => this.createEmployee(e)}>
+                 {this.createTextInput(name, 'name')} 
+                {this.createTextInput(points, 'points')}
+                {this.createTextInput(job, 'job')}
+                {this.createTextInput(area, 'area')}
+                {this.createTextInput(imgSrc, 'imgSrc')}
                 <button type="submit">Create</button>
-             </form>
+             </StyledEmployeeForm>
             
-             </div>
+             </StyledFormContainer>
+           
         );
     }
 }
 
 export default EmployeesForm;
+
+
+

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {BASE_REMOTE_ENDPOINT} from '../BaseUrls'
 import Employee from '../Components/Employee';
+import {StyleList} from '../Styles/EmployeeListStyle';
 
 class EmployeesList extends Component{
 
@@ -62,6 +63,7 @@ class EmployeesList extends Component{
           return newArray;
        }   
 
+     
        
 
     render(){
@@ -79,21 +81,25 @@ class EmployeesList extends Component{
 
         return(
              <>
-            <input
+            <div>
+            <StyleList
             onChange={(e) => this.handleTextChange(e, "filterText")}
             placeholder="Filter by name"
             type="text"
             value={filterText} />
-
+            </div>
+            <div className="desplazar">
                 {filteredName.map(({ id, name, imgSrc, points }) => (
                     
                  <Link key={id} to={`/employees/${id}`}>
                     <Employee
-                     imgSrc={imgSrc} name={name} points={points}
+                     imgSrc={imgSrc} name={name} points={points} 
                     />
-                </Link>
-               
+                </Link>  
             ))}
+
+           
+            </div>
          </>
         );
     }
