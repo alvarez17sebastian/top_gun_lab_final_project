@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
   .txt{
     text-align: center;
@@ -25,6 +26,25 @@
   margin-left: 0px;
     margin-top: 30px;
     margin-left: 10px;
+ }
+.container{
+  width: 180px;
+  height: 130px;
+  display: inline-block;
+  max-width: 10px;
+  max-height: 350px;
+  cursor: pointer;
+  text-shadow: 2px 2px 3px rgba(100,100,100,0.8);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+  
+}
+.card_ {
+  border-radius: 8px;
+  margin-top: 5;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin:1px;
+  text-align: center;
+  transition: all 0.25s;  
 }
 
 .button-Style:hover, .btn-bootstrap:focus {
@@ -38,4 +58,30 @@
 .desplazar{
   margin-top: 100px;
 }
- 
+
+.filter-container {
+  margin: 0 0 20px 0;
+}
+.personal-card {
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 10px;
+  margin: 30px;
+}
+
+.over-text{
+  position: absolute;
+  top: 13px;
+  margin-left: 20px;
+}
+
+.center{
+  display: inline-block;
+}
