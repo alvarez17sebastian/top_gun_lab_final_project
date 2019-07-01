@@ -52,8 +52,8 @@ class EmployeesDetails extends Component {
         return ( 
                 <div>
                 <img src={imgSrc} alt=""/>
-                <p><b>name: </b>{name}</p>
-                <p><b>poitns: </b>{points}</p>
+                <p><b></b>{name}</p>
+                <p><b></b>{points}</p>
                 <p><b>job: </b>{job}</p>
                 <p><b>areaText: </b>{area}</p>
               
