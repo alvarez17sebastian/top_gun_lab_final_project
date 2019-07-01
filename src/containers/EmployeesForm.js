@@ -58,7 +58,7 @@ class EmployeesForm extends Component{
 
     handleInputChange = (value, field) => {
         this.setState(prevState => ({
-            newEmployeeFrom: {
+            newEmployeesForm: {
                 ...prevState.newEmployeesForm,
                 [field]: value
             }
@@ -86,7 +86,7 @@ class EmployeesForm extends Component{
              <h2  >Create Employee</h2>
              {createEmployeeError && <p>An error ocurred creating Employee</p>}
              <StyledEmployeeForm onSubmit={e => this.createEmployee(e)}>
-                 {this.createTextInput(name, 'name')} 
+                {this.createTextInput(name, 'name')} 
                 {this.createTextInput(points, 'points')}
                 {this.createTextInput(job, 'job')}
                 {this.createTextInput(area, 'area')}
